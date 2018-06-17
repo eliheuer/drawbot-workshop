@@ -18,8 +18,14 @@ class Car(object): # Factory of cars --> Instance = object
         speed = min(speed, self.MAX_SPEED)
         speed = max(speed, self.MIN_SPEED)
         speed = 1.1*speed
-        print('I am driving m/hr', speed)
+        print('I am %s and driving %d m/hr' % (self.__class__.__name__, speed))
 
+class Ford(Car):
+    pass
+
+class Maserati(Car):
+    MAX_SPEED = 200
+    pass
 
 # ---------------------------------------------------------------
 
