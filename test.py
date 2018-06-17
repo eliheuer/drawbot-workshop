@@ -1,18 +1,26 @@
-# Test
-print('hello world'*10)
-print(231231 * 646464)
-print(random())
 
-fill(0.95, 0.95, 0.92)
-stroke(0)
-strokeWidth(0.5)
+# Variables
+W, H = 595, 842 # this is rounded A4
+PM = 70 # Margin around the page
 
-# main
-rect(254, 72, 500 ,842)
+# Page loop
+for pn in range(20):
+    newPage(W+2*PM, H+2*PM)
+    # Draw the page background and frame
+    fill(0.95, 0.95, 0.92)
+    stroke(0)
+    strokeWidth(0.5)
+    rect(PM, PM, W, H)
 
-for n in range(50):
-    fill(random(), random(), random())
-    rect(random()*200+150, random()*200+254, 224, 390)
+    # Headline of the page
+    fill(0.2, 0.2, 0.92)
+    rect(136, 780, 458 , 50)
+    # Draw a number of squares
+    # And random colors
+    for n in range(54):
+        stroke(None)
+        fill(random(), random(), random(), 0.5)
+        rect(random()*200+150, random()*200+254, 224, 390)
 
-rect(200, 200, 340, 50)
 saveImage('MyExamplePage.pdf')
+saveImage('MyExamplePage.gif')
